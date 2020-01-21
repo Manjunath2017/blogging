@@ -2,6 +2,10 @@
   "name": "react-express",
   "version": "0.1.0",
   "private": true,
+    "engines": {
+    "node": "12.13.1",
+    "npm": "6.12.1"
+  },
   "dependencies": {
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
