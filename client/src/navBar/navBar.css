@@ -1,0 +1,10 @@
+a.active  {
+    background-color: #0080ff;
+    border:2px solid #fff;
+    margin:5px !important;
+    padding:10px !important;
+    cursor: grab !important;
+}
+a:hover{
+    text-decoration: none; 
+}

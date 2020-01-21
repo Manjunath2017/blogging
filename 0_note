@@ -1,0 +1,34 @@
+npm run dev
+Features 
+1) Off Right click
+2) delete cascade, even delete image from folder
+3) loader
+4) insert image with fromData
+5) sending Mail
+6) sending SMS
+
+
+import {contextPostId} from '../postDetail'; 
+
+const id = useContext(contextPostId);
+console.log('context : ', id.postId, '---------');
+const initialState = {
+  comment:{
+    comment_id:'',
+    email:'',
+    body:''
+  },
+  commentData:[],
+  error:true
+}  
+const reducer = (state, action)=> {
+  switch(action.type){
+    case 'FETCH_COMMENT':return{
+      commentData:action.result,
+      error:false
+    }
+    default : return state
+  }
+}
+
+const [ data, dispatch] = useReducer(reducer, initialState);
