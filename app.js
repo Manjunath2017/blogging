@@ -10,6 +10,7 @@
 // } else 
 // {
     const app = require('express')();
+    const path = require('path');
 
     const fileUpload = require('express-fileupload');
     app.use(fileUpload());
@@ -37,6 +38,11 @@
 
     const routers = require('./routers/router');
     app.use('/', routers);
+     
+    app.get('*', (request, response)=>{
+        app.use(express.static('client/build'));
+        response.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
 
     
     var port = process.env.PORT || 5000;
